@@ -1,33 +1,17 @@
-# The name of the workflow
-name: Syntax Check with Semgrep
-
-# The event that triggers the workflow
-on: [push, pull_request]
-
-# Define the jobs for the workflow
+name: Semgrep
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
-  semgrep-check:
-    # The type of machine to use
+  semgrep:
+    name: Semgrep
     runs-on: ubuntu-latest
-
-    # The steps to run for the job
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Semgrep
+        uses: returntocorp/semgrep-action@v1
         with:
-          python-version: '3.8'
-
-      - name: Install dependencies
-        run: pip install semgrep
-rules:
-  languages:
-    - python
-  name: libraries check
-  pattern: |
-          (os.system|os.popen|exec|eval|pickle.load|cPickle.load|subprocess.Popen|ssl.wrap_socket|socket.bind|...)        
-  message: "Potential use of unsafe function detected: ${0}"
-
-
+          config-file: ".semgrep.yml"
