@@ -1,0 +1,7 @@
+rules:
+  - id: insecure-function
+    pattern: |
+      subprocess.Popen
+      os.system
+      os.popen
+    message: "Insecure function call detected"
