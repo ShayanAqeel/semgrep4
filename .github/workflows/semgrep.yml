@@ -7,6 +7,17 @@ on:
     branches: ["master", "main"]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: .semgrep.yml
   semgrep:
     # User-definable name of this GitHub Actions job:
     name: semgrep/ci
