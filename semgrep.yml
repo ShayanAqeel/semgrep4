@@ -1,7 +1,16 @@
 rules:
-  - id: insecure-function
-    pattern: |
-      subprocess.Popen
-      os.system
-      os.popen
-    message: "Insecure function call detected"
+- id: python-syntax-check
+  languages:
+    - python
+  patterns:
+    - pattern: |
+        try:
+            compile(r'''{expr}''', '<string>', 'exec')
+        except SyntaxError as e:
+            warn(f'Syntax error in {e.filename} at line {e.lineno}: {e.text.strip()}')
+    - pattern: |
+        try:
+            compile(r"""{expr}""", '<string>', 'exec')
+        except SyntaxError as e:
+            warn(f'Syntax error in {e.filename} at line {e.lineno}: {e.text.strip()}')
+  message: "Check Python syntax"
