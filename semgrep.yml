@@ -1,16 +1,6 @@
 rules:
-- id: python-syntax-check
-  languages:
-    - python
-  patterns:
-    - pattern: |
-        try:
-            compile(r'''{expr}''', '<string>', 'exec')
-        except SyntaxError as e:
-            warn(f'Syntax error in {e.filename} at line {e.lineno}: {e.text.strip()}')
-    - pattern: |
-        try:
-            compile(r"""{expr}""", '<string>', 'exec')
-        except SyntaxError as e:
-            warn(f'Syntax error in {e.filename} at line {e.lineno}: {e.text.strip()}')
-  message: "Check Python syntax"
+  - id: avoid-print-statements
+    pattern: |
+      print($expr)
+    message: "Avoid using print statements in production code."
+    severity: warning
