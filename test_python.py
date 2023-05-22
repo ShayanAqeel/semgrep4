@@ -1,4 +1,4 @@
-print(aa)
+print(aa
 Adobe Adobe Short-Lived Access Token 
 Adafruit IO: AIO-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 Adobe Device Token: 01234567-89ab-cdef-0123-456789abcdef
