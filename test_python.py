@@ -1,6 +1,5 @@
 Adafruit IO Adafruit IO Key 1234567890123456789012345678901234567890
 Adobe Adobe Device Token abcdefghijklmnopqrstuvwxyz0123456789
-Adobe Adobe Service Token abcdefghijklmnopqrstuvwxyz0123456789
 Adobe Adobe Short-Lived Access Token abcdefghijklmnopqrstuvwxyz0123456789
 Adobe Adobe JSON Web Token abcdefghijklmnopqrstuvwxyz0123456789
 Alibaba Cloud Alibaba Cloud Access Key ID and Access Key Secret pair accesskeyid123:accesskeysecret456
