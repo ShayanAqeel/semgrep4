@@ -2,7 +2,7 @@ rules:
   - id: example-rule
     message: "Avoid using print statements"
     patterns:
-      - pattern: "print($X)"
+      - pattern: "print($X*)"
     languages:
       - python
     severity: 'ERROR'
