@@ -1,5 +1,5 @@
 print(aa)
-Adobe Adobe Short-Lived Access Token
+Adobe Adobe Short-Lived Access Toke
 Adafruit IO: AIO-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcde
 Adobe Device Token: 01234567-89ab-cdef-0123-456789abcdef
 Amazon AWS Access Key ID: AKIA1234567890EXAMPLE
