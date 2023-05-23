@@ -5,4 +5,4 @@ rules:
       - pattern: "print($X)"
     languages:
       - python
-    severity: error
+    severity: ['ERROR']
