@@ -1,6 +1,7 @@
 rules:
-  - id: avoid-print-statements
-    pattern: |
-      print($expr)
-    message: "Avoid using print statements in production code."
-    severity: warning
+  - id: example-rule
+    patterns:
+      - pattern: "print($X)"
+        message: "Avoid using print statements"
+    languages:
+      - python
