@@ -1,7 +1,7 @@
 rules:
   - id: example-rule
+    message: "Avoid using print statements"
     patterns:
       - pattern: "print($X)"
-        message: "Avoid using print statements"
     languages:
       - python
