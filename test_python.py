@@ -1,6 +1,6 @@
 print(aa)
 Adobe Adobe Short-Lived Access Token
-Adafruit IO: AIO-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+Adafruit IO: AIO-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcde
 Adobe Device Token: 01234567-89ab-cdef-0123-456789abcdef
 Amazon AWS Access Key ID: AKIA1234567890EXAMPLE
 Amazon AWS Secret Access Key: abcdefghijklmnopqrstuvwxyz1234567890+/=
