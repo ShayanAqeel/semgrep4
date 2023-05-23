@@ -1,16 +1,43 @@
-name: Semgrep Scan
-on: [push, pull_request]
+name: Semgrep
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '27 18 * * 3'
+
+permissions:
+  contents: read
 
 jobs:
   semgrep:
-    name: Semgrep Scan
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # Checkout project source
+      - uses: actions/checkout@v3
 
+      # Install Semgrep
+      - name: Install Semgrep
+        run: curl -sL https://semgrep.dev/install.sh | bash
+
+      # Run Semgrep with your desired options
       - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
+        run: semgrep [options]
+
+      # Store the output in a file
+      - name: Store Findings
+        run: semgrep [options] > findings.txt
+
+      # If you want to generate SARIF output
+      - name: Generate SARIF
+        run: semgrep [options] --format=sarif > semgrep.sarif
+
+      # Upload SARIF file to GitHub Code Scanning
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          config: semgrep.yml
+          sarif_file: semgrep.sarif
+        if: always()
